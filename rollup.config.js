@@ -45,8 +45,8 @@ export default {
       resolve: ['.svelte', '.js', '.ts'],
       entries: [
         {
-          find: '@/',
-          replacement: 'src/',
+          find: '@',
+          replacement: 'src',
         },
       ],
     }),
