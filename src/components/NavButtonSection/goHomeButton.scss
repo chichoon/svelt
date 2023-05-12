@@ -1,0 +1,17 @@
+.wrapper {
+  background-color: $BG_UI;
+  width: 120px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.homeIcon {
+  z-index: $LEVEL_UI;
+  width: 25px;
+  height: 25px;
+  fill: $BUTTON_ICON;
+}

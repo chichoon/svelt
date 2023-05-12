@@ -1,0 +1,42 @@
+.wrapper {
+  position: relative;
+  width: 25px;
+  height: 25px;
+
+  hr {
+    position: absolute;
+    width: 20px;
+    height: 1px;
+    top: 1px;
+    right: 0px;
+    background-color: $BUTTON_ICON;
+    border: none;
+    transform: rotate(-45deg);
+  }
+
+  hr.leftToRight {
+    width: 10px;
+    top: 7px;
+    right: 2px;
+    transform: rotate(60deg);
+  }
+}
+
+.innerDivWrapper {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6px;
+  height: 6px;
+  border: 1px solid $BUTTON_ICON;
+}
+
+.innerDivElement {
+  position: absolute;
+  background-color: $BUTTON_ICON;
+  width: 4px;
+  height: 4px;
+}

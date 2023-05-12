@@ -311,3 +311,15 @@
     />
   </g>
 </svg>
+
+<style>
+  .homeBg {
+    width: 120px;
+    height: 40px;
+    position: absolute;
+    top: 73px;
+    left: 135px;
+    transform: scale(500%);
+    opacity: 0.8;
+  }
+</style>
