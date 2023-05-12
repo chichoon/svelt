@@ -1,5 +1,9 @@
+@use "@/styles/colors";
+@use "@/styles/levels";
+@use "@/styles/sizes";
+
 .wrapper {
-  background-color: $BG_UI;
+  background-color: colors.$BG_UI;
   width: 120px;
   height: 40px;
   display: flex;
@@ -10,8 +14,8 @@
 }
 
 .homeIcon {
-  z-index: $LEVEL_UI;
+  z-index: levels.$LEVEL_UI;
   width: 25px;
   height: 25px;
-  fill: $BUTTON_ICON;
+  fill: colors.$BUTTON_ICON;
 }

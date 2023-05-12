@@ -1,3 +1,7 @@
+@use "@/styles/colors";
+@use "@/styles/levels";
+@use "@/styles/sizes";
+
 .wrapper {
   position: relative;
   width: 25px;
@@ -9,7 +13,7 @@
     height: 1px;
     top: 1px;
     right: 0px;
-    background-color: $BUTTON_ICON;
+    background-color: colors.$BUTTON_ICON;
     border: none;
     transform: rotate(-45deg);
   }
@@ -31,12 +35,12 @@
   justify-content: center;
   width: 6px;
   height: 6px;
-  border: 1px solid $BUTTON_ICON;
+  border: 1px solid colors.$BUTTON_ICON;
 }
 
 .innerDivElement {
   position: absolute;
-  background-color: $BUTTON_ICON;
+  background-color: colors.$BUTTON_ICON;
   width: 4px;
   height: 4px;
 }
