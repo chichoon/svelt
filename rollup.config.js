@@ -1,12 +1,13 @@
-import { spawn } from "child_process";
-import svelte from "rollup-plugin-svelte";
-import commonjs from "@rollup/plugin-commonjs";
-import terser from "@rollup/plugin-terser";
-import resolve from "@rollup/plugin-node-resolve";
-import livereload from "rollup-plugin-livereload";
-import css from "rollup-plugin-css-only";
+import { spawn } from 'child_process';
+import svelte from 'rollup-plugin-svelte';
+import commonjs from '@rollup/plugin-commonjs';
+import terser from '@rollup/plugin-terser';
+import resolve from '@rollup/plugin-node-resolve';
+import livereload from 'rollup-plugin-livereload';
+import alias from '@rollup/plugin-alias';
+import css from 'rollup-plugin-css-only';
 
-import sveltePreprocess from "svelte-preprocess";
+import sveltePreprocess from 'svelte-preprocess';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -20,28 +21,41 @@ function serve() {
   return {
     writeBundle() {
       if (server) return;
-      server = spawn("npm", ["run", "start", "--", "--dev"], {
-        stdio: ["ignore", "inherit", "inherit"],
+      server = spawn('npm', ['run', 'start', '--', '--dev'], {
+        stdio: ['ignore', 'inherit', 'inherit'],
         shell: true,
       });
 
-      process.on("SIGTERM", toExit);
-      process.on("exit", toExit);
+      process.on('SIGTERM', toExit);
+      process.on('exit', toExit);
     },
   };
 }
 
 export default {
-  input: "src/main.js",
+  input: 'src/main.js',
   output: {
     sourcemap: true,
-    format: "iife",
-    name: "app",
-    file: "public/build/bundle.js",
+    format: 'iife',
+    name: 'app',
+    file: 'public/build/bundle.js',
   },
   plugins: [
+    alias({
+      resolve: ['.svelte', '.js', '.ts'],
+      entries: [
+        {
+          find: '@/',
+          replacement: 'src/',
+        },
+      ],
+    }),
     svelte({
-      preprocess: sveltePreprocess(),
+      preprocess: sveltePreprocess({
+        scss: {
+          prependData: ['@import "./src/styles/colors"; @import "./src/styles/levels"; @import "./src/styles/sizes";'],
+        },
+      }),
       compilerOptions: {
         // enable run-time checks when not in production
         dev: !production,
@@ -49,7 +63,7 @@ export default {
     }),
     // we'll extract any component CSS out into
     // a separate file - better for performance
-    css({ output: "bundle.css" }),
+    css({ output: 'bundle.css' }),
 
     // If you have external dependencies installed from
     // npm, you'll most likely need these plugins. In
@@ -58,8 +72,8 @@ export default {
     // https://github.com/rollup/plugins/tree/master/packages/commonjs
     resolve({
       browser: true,
-      dedupe: ["svelte"],
-      exportConditions: ["svelte"],
+      dedupe: ['svelte'],
+      exportConditions: ['svelte'],
     }),
     commonjs(),
 
@@ -69,7 +83,7 @@ export default {
 
     // Watch the `public` directory and refresh the
     // browser on changes when not in production
-    !production && livereload("public"),
+    !production && livereload('public'),
 
     // If we're building for production (npm run build
     // instead of npm run dev), minify
