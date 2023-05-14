@@ -1,5 +1,6 @@
 <script>
   import FileIcon from "./FileIcon.svelte";
+  import GoHomeButton from "./GoHomeButton.svelte";
 
   import InfoIcon from "@/assets/InfoIcon.svelte";
   import LeftArrowIcon from "@/assets/LeftArrowIcon.svelte";
@@ -12,6 +13,7 @@
     <button type="button" class="topButton goBackButton">
       <LeftArrowIcon />
     </button>
+    <GoHomeButton />
   </div>
   <button type="button" class="topButton infoButton">
     <div>
@@ -22,14 +24,10 @@
     <FileIcon />
   </button>
   <button type="button" class="topButton">
-    <div>
-      <HangerIcon />
-    </div>
+    <HangerIcon />
   </button>
-  <button type="button" class="topButton infoButton">
-    <div>
-      <RookIcon />
-    </div>
+  <button type="button" class="topButton infoButton rookButton">
+    <RookIcon />
   </button>
 </nav>
 
@@ -47,5 +45,11 @@
     width: 20px;
     height: 20px;
     transform: rotate(-10deg);
+  }
+
+  .rookButton :global(svg) {
+    width: 25px;
+    height: 25px;
+    transform: none;
   }
 </style>
