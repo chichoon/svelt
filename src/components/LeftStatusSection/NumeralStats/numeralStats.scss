@@ -33,6 +33,6 @@
   width: 100%;
 
   :not(:last-child) {
-    margin-bottom: 5px;
+    margin-bottom: 5px; // TODO: 이거 안먹히는 이유
   }
 }
