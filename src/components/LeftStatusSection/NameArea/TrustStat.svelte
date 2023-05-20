@@ -10,11 +10,13 @@
       <span class="trustText">신뢰도</span>
       <FastForwardIcon />
     </div>
-    <span class="trustText">{trustPercentage}</span>
+    <span class="trustText">{trustPercentage}%</span>
   </div>
   <div
     class="progressBar"
-    style={`background: linear-gradient(to right, #ffaf6d 0 ${trustPercentage}%, #d8d8d8 ${trustPercentage}% 100%)`}
+    style={`background: linear-gradient(to right, #ffaf6d 0 ${
+      trustPercentage / 2
+    }%, #d8d8d8 ${trustPercentage / 2}% 100%)`}
   />
 </div>
 

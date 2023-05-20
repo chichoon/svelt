@@ -14,7 +14,7 @@
     crossorigin="use-credentials"
   />
   <link
-    href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&family=Noto+Sans+KR&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Noto+Sans+KR:wght@500&display=swap"
     rel="stylesheet"
   />
 </svelte:head>
