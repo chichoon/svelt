@@ -1,0 +1,45 @@
+@use "@/styles/colors";
+@use "@/styles/levels";
+@use "@/styles/sizes";
+
+.trustWrapper {
+  background: linear-gradient(
+    to right,
+    colors.$WHITE 0 30%,
+    colors.$WHITE_TRANSPARENT 70% 100%
+  );
+  width: 400px;
+  height: 30px;
+  border-radius: 5px;
+  padding: 3px 1px 1px 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trustTextWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 2px;
+  justify-content: space-between;
+}
+
+.trustLeftText {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.trustText {
+  font-size: sizes.$FONT_ML;
+}
+
+.progressBar {
+  width: 100%;
+  height: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
