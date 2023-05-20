@@ -1,10 +1,9 @@
 <script>
-  import GoHomeButton from "@/components/NavButtonSection/GoHomeButton.svelte";
-  import FileIcon from "@/components/NavButtonSection/FileIcon.svelte";
   import NavButtonSection from "@/components/NavButtonSection/NavButtonSection.svelte";
 
   import operatorImg from "@/assets/test.png";
   import ReactIcon from "@/assets/ReactIcon.svelte";
+  import LeftStatusSection from "@/components/LeftStatusSection/LeftStatusSection.svelte";
 </script>
 
 <main class="statPageBackgroundWrapper">
@@ -13,6 +12,7 @@
     <ReactIcon />
   </div>
   <img src={operatorImg} alt="operator" class="characterImage" />
+  <LeftStatusSection />
 </main>
 
 <style lang="scss">

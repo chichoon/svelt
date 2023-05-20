@@ -1,0 +1,38 @@
+@use "@/styles/colors";
+@use "@/styles/sizes";
+
+.numeralStatsWrapper {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 205px;
+}
+
+.numeralStatsTitle {
+  background-color: colors.$WHITE_TRANSPARENT;
+  width: 100%;
+  height: 20px;
+  padding: 1px;
+  margin-bottom: 5px;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+
+  span {
+    font-size: sizes.$FONT_ML;
+  }
+}
+
+.statChipDivider {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  :not(:last-child) {
+    margin-bottom: 5px;
+  }
+}

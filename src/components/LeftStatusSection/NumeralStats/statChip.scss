@@ -1,0 +1,41 @@
+@use "@/styles/colors";
+@use "@/styles/sizes";
+
+.statChipWrapper {
+  width: 100px;
+  height: 20px;
+  background-color: colors.$WHITE_TRANSPARENT;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 2px;
+}
+
+.iconWrapper {
+  background-color: colors.$BG_UI;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.valueWrapper {
+  user-select: none;
+  cursor: default;
+  height: 20px;
+  flex: 1;
+
+  span {
+    line-height: 20px;
+    vertical-align: center;
+    font-size: sizes.$FONT_M;
+  }
+}
+
+.tooltip {
+  display: none;
+}

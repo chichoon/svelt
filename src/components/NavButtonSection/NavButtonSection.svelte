@@ -33,7 +33,7 @@
 
 <style lang="scss">
   @use "@/styles/colors";
-  @import "./index.scss";
+  @import "./navButtonSection.scss";
 
   .topButton :global(svg) {
     width: 25px;
