@@ -1,5 +1,5 @@
 <script>
-  import HomeBg from '@/assets/HomeBg.svelte';
+  import HomeBg from "@/assets/HomeBg.svelte";
 </script>
 
 <button type="button" class="wrapper">
@@ -18,5 +18,24 @@
 </button>
 
 <style lang="scss">
-  @import './goHomeButton.scss';
+  @use "@/styles/colors";
+  @use "@/styles/levels";
+
+  .wrapper {
+    background-color: colors.$BG_UI;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .homeIcon {
+    z-index: levels.$LEVEL_UI;
+    width: 25px;
+    height: 25px;
+    fill: colors.$BUTTON_ICON;
+  }
 </style>
