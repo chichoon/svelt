@@ -1,0 +1,137 @@
+@use "@/styles/colors";
+@use "@/styles/sizes";
+@use "@/styles/levels";
+
+.talentStatWrapper {
+  width: 360px;
+  height: 120px;
+  border-radius: 3px;
+  background-color: colors.$BG_UI;
+  padding: 10px;
+  margin-top: 80px;
+}
+
+.talentStatTop {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.jobWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+
+  span {
+    font-size: sizes.$FONT_ML;
+    color: colors.$BUTTON_ICON;
+  }
+}
+
+.detailedJob {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.detailedJobIcon {
+  width: 70px;
+  height: 70px;
+  border: 2px solid colors.$BUTTON_ICON_DIMMED;
+  background-color: colors.$BG_UI_DIMMED;
+  margin-top: -30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.detailedJobDescription {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: flex-end;
+}
+
+.stageWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  span {
+    font-size: sizes.$FONT_MS;
+    color: colors.$WHITE_TRANSPARENT;
+    margin-right: 5px;
+  }
+
+  span:last-child {
+    font-size: sizes.$FONT_M;
+    color: colors.$WHITE;
+    font-weight: 700;
+  }
+}
+
+.stageManage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 5px;
+
+  span: {
+    font-size: sizes.$FONT_MS;
+    color: colors.$WHITE_TRANSPARENT;
+    margin-right: 5px;
+  }
+}
+
+.blushShadow {
+  width: 50px;
+  height: 0;
+  position: absolute;
+  top: 25px;
+  left: 7.5px;
+  box-shadow: 0 0 3px 3px colors.$HIGHLIGHT_BLUE;
+}
+
+.jobTextWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    font-size: sizes.$FONT_MS;
+    color: colors.$WHITE_TRANSPARENT;
+  }
+
+  span:last-child {
+    font-size: sizes.$FONT_M;
+    color: colors.$WHITE;
+    font-weight: 700;
+  }
+}
+
+.talentWrapper {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+
+  div {
+    padding: 5px;
+    background-color: colors.$BUTTON_ICON;
+    border-radius: 5px;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    span {
+      color: colors.$BG_UI;
+      font-size: sizes.$FONT_M;
+    }
+  }
+}

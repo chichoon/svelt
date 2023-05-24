@@ -1,11 +1,14 @@
 <script>
   import EliteStats from "./EliteStats/EliteStats.svelte";
   import ExpStats from "./ExpStats.svelte";
+  import TalentStats from "./TalentStats.svelte";
 </script>
 
 <section class="rightStatSection">
   <ExpStats />
   <EliteStats />
+
+  <TalentStats />
 </section>
 
 <style lang="scss">
