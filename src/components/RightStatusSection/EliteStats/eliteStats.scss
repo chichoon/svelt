@@ -1,0 +1,52 @@
+@use "@/styles/colors";
+@use "@/styles/sizes";
+
+.eliteStatsWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 400px;
+  margin-bottom: -15px;
+}
+
+.eliteWrapper {
+  filter: drop-shadow(0 0 2px colors.$BOX_SHADOW);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.eliteInnerBar {
+  background-color: colors.$BG_UI;
+  border-radius: 3px;
+  width: 180px;
+  height: 50px;
+  margin-left: -90px;
+  padding-left: 90px;
+  padding-right: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+
+  & > span {
+    color: colors.$BUTTON_ICON_DIMMED;
+  }
+
+  div {
+    background-color: colors.$BUTTON_ICON_DIMMED;
+    opacity: 0.5;
+    padding: 2px 5px;
+    border-radius: 2px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      color: colors.$BG_UI;
+      font-size: sizes.$FONT_S;
+      line-height: sizes.$FONT_XS;
+    }
+  }
+}

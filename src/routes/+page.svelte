@@ -4,6 +4,7 @@
   import operatorImg from "@/assets/test.png";
   import ReactIcon from "@/assets/ReactIcon.svelte";
   import LeftStatusSection from "@/components/LeftStatusSection/LeftStatusSection.svelte";
+  import RightStatusSection from "@/components/RightStatusSection/RightStatusSection.svelte";
 </script>
 
 <svelte:head
@@ -26,6 +27,7 @@
   </div>
   <img src={operatorImg} alt="operator" class="characterImage" />
   <LeftStatusSection />
+  <RightStatusSection />
 </main>
 
 <style lang="scss">
