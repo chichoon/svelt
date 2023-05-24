@@ -32,11 +32,44 @@
 
 <style lang="scss">
   @use "@/styles/colors";
-  @import "./+page.scss";
+  @use "@/styles/levels";
+  @use "@/styles/sizes";
+
+  .statPageBackgroundWrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    box-shadow: inset colors.$BG_SHADOW;
+    background: no-repeat url("@/assets/test_bg.png");
+    background-size: cover;
+    font-family: "Noto Sans KR", sans-serif;
+  }
+
+  .groupIconWrapper {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 220px;
+    height: 220px;
+    z-index: levels.$LEVEL_GROUP_IMAGE;
+  }
 
   .groupIconWrapper :global(svg) {
     width: 220px;
     height: 220px;
     fill: colors.$GROUP_ICON;
+  }
+
+  .characterImage {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    z-index: levels.$LEVEL_CHAR_IMAGE;
   }
 </style>
