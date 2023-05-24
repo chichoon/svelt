@@ -1,8 +1,10 @@
 <script>
   import EliteStats from "./EliteStats/EliteStats.svelte";
+  import ExpStats from "./ExpStats.svelte";
 </script>
 
 <section class="rightStatSection">
+  <ExpStats />
   <EliteStats />
 </section>
 

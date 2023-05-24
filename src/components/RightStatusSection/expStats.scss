@@ -1,0 +1,128 @@
+@use "@/styles/colors";
+@use "@/styles/sizes";
+@use "@/styles/levels";
+
+.expStatsWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 400px;
+  margin-bottom: 10px;
+}
+
+.levelCircle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50px;
+  border: 5px solid transparent;
+  filter: drop-shadow(0 0 2px colors.$BOX_SHADOW);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  span {
+    color: colors.$WHITE;
+    font-size: sizes.$FONT_L;
+    line-height: sizes.$FONT_L;
+    z-index: levels.$LEVEL_UI;
+    margin-top: 5px;
+  }
+
+  span:last-child {
+    font-size: sizes.$FONT_XXXL;
+    line-height: sizes.$FONT_XXXL;
+    margin-top: 0;
+  }
+}
+
+.levelGraph {
+  width: 80px;
+  height: 80px;
+  background-color: colors.$WHITE_TRANSPARENT;
+  -webkit-mask: radial-gradient(
+    transparent 35px,
+    colors.$WHITE_TRANSPARENT 35px,
+    colors.$WHITE_TRANSPARENT 40px
+  );
+  mask: radial-gradient(
+    transparent 35px,
+    colors.$WHITE_TRANSPARENT 35px,
+    colors.$WHITE_TRANSPARENT 40px
+  );
+  transform: scaleX(-1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: levels.$LEVEL_BACKGROUND;
+}
+
+.levelAmountLeft {
+  position: absolute;
+  bottom: -15px;
+  left: -7px;
+  color: colors.$WHITE;
+  font-size: sizes.$FONT_MS;
+  font-weight: 700;
+}
+
+.expWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  filter: drop-shadow(0 0 2px colors.$BOX_SHADOW);
+}
+
+.expInnerRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 300px;
+  height: 40px;
+}
+
+.expBar {
+  background-color: colors.$BG_UI;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 40px;
+  border-radius: 3px;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  -webkit-mask: radial-gradient(circle, transparent 45px, colors.$BG_UI 45px) -190px;
+  mask: radial-gradient(circle, transparent 45px, colors.$BG_UI 45px) -190px;
+
+  span {
+    margin-left: -10px;
+    color: colors.$WHITE;
+    font-size: sizes.$FONT_M;
+    line-height: sizes.$FONT_M;
+    margin-bottom: 3px;
+  }
+
+  span:last-child {
+    font-size: sizes.$FONT_S;
+    line-height: sizes.$FONT_S;
+    margin-bottom: 0;
+  }
+}
+
+.fillingBar {
+  background-color: colors.$BG_UI;
+  width: 100px;
+  height: 40px;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  right: 25px;
+}
