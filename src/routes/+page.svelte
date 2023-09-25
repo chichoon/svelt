@@ -1,10 +1,14 @@
 <script>
   import NavButtonSection from "@/components/NavButtonSection/NavButtonSection.svelte";
 
-  import operatorImg from "@/assets/test.png";
-  import ReactIcon from "@/assets/ReactIcon.svelte";
   import LeftStatusSection from "@/components/LeftStatusSection/LeftStatusSection.svelte";
   import RightStatusSection from "@/components/RightStatusSection/RightStatusSection.svelte";
+  
+  import operatorImg from "@/assets/test.png";
+  import ReactIcon from "@/assets/ReactIcon.svelte";
+
+  import { getGitHubData } from "@/services/getGitHubData";
+
 </script>
 
 <svelte:head
@@ -20,15 +24,21 @@
   />
 </svelte:head>
 
-<main class="statPageBackgroundWrapper">
-  <NavButtonSection />
-  <div class="groupIconWrapper">
-    <ReactIcon />
-  </div>
-  <img src={operatorImg} alt="operator" class="characterImage" />
-  <LeftStatusSection />
-  <RightStatusSection />
-</main>
+{#await getGitHubData()}
+  <p>loading...</p>
+{:then data} 
+  <main class="statPageBackgroundWrapper">
+    <NavButtonSection />
+    <div class="groupIconWrapper">
+      <ReactIcon />
+    </div>
+    <img src={operatorImg} alt="operator" class="characterImage" />
+    <LeftStatusSection />
+    <RightStatusSection />
+  </main>
+{:catch error}
+  <p>{error.message}</p>
+{/await}
 
 <style lang="scss">
   @use "@/styles/colors";
