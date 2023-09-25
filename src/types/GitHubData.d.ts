@@ -1,10 +1,10 @@
 export interface GitHubData {
   login: string;
   id: number;
-  name: string;
-  company: string;
-  blog: string;
-  email: string;
+  name: string | null;
+  company: string | null;
+  blog: string | null;
+  email: string | null;
   public_repos: number;
   public_gists: number;
   followers: number;
