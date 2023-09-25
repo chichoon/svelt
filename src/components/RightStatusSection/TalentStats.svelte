@@ -1,5 +1,5 @@
 <script>
-  import NextIcon from "@/assets/NextIcon.svelte";
+  import SvelteIcon from "@/assets/SvelteIcon.svelte";
   import PlusIcon from "@/assets/PlusIcon.svelte";
   import ReactIcon from "@/assets/ReactIcon.svelte";
 </script>
@@ -7,11 +7,11 @@
 <div class="talentStatWrapper">
   <div class="talentStatTop">
     <div class="jobWrapper">
-      <NextIcon />
+      <SvelteIcon />
       <span>
         Made with
         <br />
-        NextJS
+        Svelte
       </span>
     </div>
     <div class="detailedJob">
@@ -37,7 +37,7 @@
   </div>
   <div class="talentWrapper">
     <div>
-      <span>Next 어렵다</span>
+      <span>Svelte 어렵나?</span>
     </div>
     <div>
       <span>아아아아아</span>
