@@ -5,6 +5,7 @@
   width: 100px;
   height: 20px;
   background-color: colors.$WHITE_TRANSPARENT;
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -34,8 +35,4 @@
     vertical-align: center;
     font-size: sizes.$FONT_M;
   }
-}
-
-.tooltip {
-  display: none;
 }

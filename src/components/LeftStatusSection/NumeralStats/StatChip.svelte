@@ -2,10 +2,11 @@
   export let value: number | string;
   export let maxValue: number | null = null;
   export let hoverText: string = "";
-  export const percentage =
+  $: percentage =
     typeof value === "number" && typeof maxValue === "number"
       ? Math.floor((value * 100) / maxValue)
       : 0;
+  let isHovering = false;
 </script>
 
 <div class="statChipWrapper">
@@ -15,10 +16,13 @@
   <div
     class="valueWrapper"
     style={`background: linear-gradient(to right, #9e9a9b 0 ${percentage}%, #00000000 ${percentage}% 100%)`}
+    on:mouseover={() => isHovering = true}
+    on:focus={() => isHovering = true}
+    on:mouseout={() => isHovering = false}
+    on:blur={() => isHovering = false}
   >
-    <span>{value}</span>
+    <span>{isHovering ? hoverText : value}</span>
   </div>
-  <span class="tooltip">{hoverText}</span>
 </div>
 
 <style lang="scss">
