@@ -3,12 +3,12 @@
 
   import LeftStatusSection from "@/components/LeftStatusSection/LeftStatusSection.svelte";
   import RightStatusSection from "@/components/RightStatusSection/RightStatusSection.svelte";
-  
-  import operatorImg from "@/assets/test.png";
+
+  import operatorImg from "@/assets/operator.png";
+  import loadingImg from "@/assets/loading.jpg";
   import ReactIcon from "@/assets/ReactIcon.svelte";
 
   import { getGitHubData } from "@/services/getGitHubData";
-
 </script>
 
 <svelte:head
@@ -25,8 +25,8 @@
 </svelte:head>
 
 {#await getGitHubData()}
-  <p>loading...</p>
-{:then data} 
+  <img src={loadingImg} alt="loading" />
+{:then data}
   <main class="statPageBackgroundWrapper">
     <NavButtonSection />
     <div class="groupIconWrapper">
@@ -55,7 +55,7 @@
     align-items: flex-end;
     justify-content: space-between;
     box-shadow: inset colors.$BG_SHADOW;
-    background: no-repeat url("@/assets/test_bg.png");
+    background: no-repeat url("@/assets/background.png");
     background-size: cover;
     font-family: "Noto Sans KR", sans-serif;
   }
