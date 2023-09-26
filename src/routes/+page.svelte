@@ -4,8 +4,8 @@
   import LeftStatusSection from "@/components/LeftStatusSection/LeftStatusSection.svelte";
   import RightStatusSection from "@/components/RightStatusSection/RightStatusSection.svelte";
 
-  import operatorImg from "@/assets/operator.png";
-  import loadingImg from "@/assets/loading.jpg";
+  import operatorImg from "@/assets/images/operator.png";
+  import loadingImg from "@/assets/images/loading.jpg";
   import ReactIcon from "@/assets/ReactIcon.svelte";
 
   import { getGitHubData } from "@/services/getGitHubData";
@@ -25,7 +25,7 @@
 </svelte:head>
 
 {#await getGitHubData()}
-  <img src={loadingImg} alt="loading" />
+  <div class="loading" />
 {:then data}
   <main class="statPageBackgroundWrapper">
     <NavButtonSection />
@@ -45,6 +45,13 @@
   @use "@/styles/levels";
   @use "@/styles/sizes";
 
+  .loading {
+    width: 100vw;
+    height: 100vh;
+    background: no-repeat url("@/assets/images/loading.jpg");
+    background-size: cover;
+  }
+
   .statPageBackgroundWrapper {
     width: 100vw;
     height: 100vh;
@@ -55,7 +62,7 @@
     align-items: flex-end;
     justify-content: space-between;
     box-shadow: inset colors.$BG_SHADOW;
-    background: no-repeat url("@/assets/background.png");
+    background: no-repeat url("@/assets/images/background.png");
     background-size: cover;
     font-family: "Noto Sans KR", sans-serif;
   }
