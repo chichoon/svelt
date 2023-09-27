@@ -67,6 +67,7 @@
     left: calc(50vw - 250px);
     width: 500px;
     height: 500px;
+    border-radius: 300px;
     object-fit: contain;
     z-index: levels.$LEVEL_CHAR_IMAGE;
   }
