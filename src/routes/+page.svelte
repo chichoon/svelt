@@ -28,7 +28,12 @@
   <div class="loading" />
 {:then data}
   <main class="statPageBackgroundWrapper">
-    <NavButtonSection />
+    <NavButtonSection 
+      htmlUrl={data.html_url} 
+      blogUrl={data.blog} 
+      email={data.email} 
+      createdAt={data.created_at}
+    />
     <div class="groupIconWrapper">
       <ReactIcon />
     </div>

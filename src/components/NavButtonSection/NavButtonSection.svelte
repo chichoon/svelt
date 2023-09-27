@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import FileIcon from "./FileIcon.svelte";
   import GoHomeButton from "./GoHomeButton.svelte";
 
@@ -6,29 +6,51 @@
   import LeftArrowIcon from "@/assets/LeftArrowIcon.svelte";
   import HangerIcon from "@/assets/HangerIcon.svelte";
   import RookIcon from "@/assets/RookIcon.svelte";
+
+  export let htmlUrl: string;
+  export let blogUrl: string;
+  export let email: string;
+  export let createdAt: string;
+  
+  let isHovered: boolean = false;
+
+  function handleGoBack() {
+    window.history.back();
+  }
+
+  function handleHover() {
+    isHovered = true;
+  }
+
+  function handleHoverOut() {
+    isHovered = false;
+  }
 </script>
 
 <nav class="buttonWrapper">
   <div class="leftButtonWrapper">
-    <button type="button" class="topButton goBackButton">
+    <button on:click={handleGoBack} class="topButton goBackButton">
       <LeftArrowIcon />
     </button>
-    <GoHomeButton />
+    <GoHomeButton htmlUrl={htmlUrl} />
   </div>
-  <button type="button" class="topButton infoButton">
+  <button class="topButton infoButton" on:mouseover={handleHover} on:mouseout={handleHoverOut} on:focus={handleHover} on:blur={handleHoverOut}>
     <div>
       <InfoIcon />
     </div>
+    {#if isHovered}
+      <div class="infoTooltip">Created at {new Date(createdAt).toDateString()}</div>
+    {/if}
   </button>
-  <button type="button" class="topButton fileIcon">
+  <a href={`mailto:${email}`} class="topButton fileIcon">
     <FileIcon />
-  </button>
-  <button type="button" class="topButton">
+  </a>
+  <a href={`https://${blogUrl}`} class="topButton">
     <HangerIcon />
-  </button>
-  <button type="button" class="topButton infoButton rookButton">
+  </a>
+  <a class="topButton infoButton rookButton">
     <RookIcon />
-  </button>
+  </a>
 </nav>
 
 <style lang="scss">

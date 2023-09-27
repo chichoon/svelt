@@ -1,6 +1,6 @@
-@use "@/styles/colors";
-@use "@/styles/levels";
-@use "@/styles/sizes";
+@use '@/styles/colors';
+@use '@/styles/levels';
+@use '@/styles/sizes';
 
 .buttonWrapper {
   display: flex;
@@ -37,12 +37,13 @@
 }
 
 .infoButton {
+  position: relative;
   background-color: colors.$BG_UI_DIMMED;
   width: 40px;
   height: 40px;
   margin: 0 10px;
 
-  & > div {
+  & > div:first-child {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,4 +57,15 @@
 
 .fileIcon {
   border-right: 3px solid colors.$BG_BLACK;
+}
+
+.infoTooltip {
+  position: absolute;
+  top: 50px;
+  width: 100px;
+  background-color: colors.$GRAYE;
+  padding: 10px;
+  border-radius: 5px;
+
+  box-shadow: 0 0 3px 3px colors.$GRAYA;
 }
