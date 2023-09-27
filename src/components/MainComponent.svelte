@@ -21,7 +21,7 @@
   <div class="groupIconWrapper">
     <GitHubIcon />
   </div>
-  <img src={operatorImg} alt="operator" class="characterImage" />
+  <img src={data.avatar_url} alt="operator" class="characterImage" />
   <LeftStatusSection />
   <RightStatusSection />
 </main>
@@ -63,8 +63,10 @@
 
   .characterImage {
     position: absolute;
-    width: 100vw;
-    height: 100vh;
+    top: calc(50vh - 250px);
+    left: calc(50vw - 250px);
+    width: 500px;
+    height: 500px;
     object-fit: contain;
     z-index: levels.$LEVEL_CHAR_IMAGE;
   }

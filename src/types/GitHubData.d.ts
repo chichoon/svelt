@@ -11,4 +11,5 @@ export interface GitHubData {
   following: number;
   html_url: string;
   created_at: string;
+  avatar_url: string;
 }
