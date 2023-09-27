@@ -9,4 +9,6 @@ export interface GitHubData {
   public_gists: number;
   followers: number;
   following: number;
+  html_url: string;
+  created_at: string;
 }
