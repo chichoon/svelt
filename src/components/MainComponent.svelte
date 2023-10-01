@@ -20,6 +20,11 @@
     twitter: data.twitter_username,
     createdAt: data.created_at,
   });
+
+  setContext('NameAreaData', {
+    name: data.name,
+    login: data.login,
+  });
 </script>
 
 <main class="statPageBackgroundWrapper">
