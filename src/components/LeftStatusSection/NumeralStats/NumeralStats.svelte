@@ -4,10 +4,13 @@
   import FastForwardIcon from '@/assets/FastForwardIcon.svelte';
   import StatChip from './StatChip.svelte';
 
-  import PlusIcon from '@/assets/PlusIcon.svelte';
-  import HourglassIcon from '@/assets/HourglassIcon.svelte';
-  import SwordIcon from '@/assets/SwordIcon.svelte';
-  import ShieldIcon from '@/assets/ShieldIcon.svelte';
+  import FollowingIcon from '@/assets/FollowingIcon.svelte';
+  import RepositoryIcon from '@/assets/RepositoryIcon.svelte';
+  import GistIcon from '@/assets/GistIcon.svelte';
+  import TwitterIcon from '@/assets/TwitterIcon.svelte';
+  import LocationIcon from '@/assets/LocationIcon.svelte';
+  import DateIcon from '@/assets/DateIcon.svelte';
+  import TimeIcon from '@/assets/TimeIcon.svelte';
 
   const { followers, following, publicGists, publicRepos, location, twitter, createdAt } =
     getContext('NumeralStatsData');
@@ -21,34 +24,34 @@
   </div>
   <div class="statChipDivider">
     <StatChip value={followers} maxValue={500} hoverText="팔로워">
-      <PlusIcon />
+      <FollowingIcon />
     </StatChip>
     <StatChip value={following} maxValue={500} hoverText="팔로잉">
-      <HourglassIcon />
+      <FollowingIcon />
     </StatChip>
   </div>
   <div class="statChipDivider">
     <StatChip value={publicRepos} maxValue={1000} hoverText="공개 Repo">
-      <SwordIcon />
+      <RepositoryIcon />
     </StatChip>
     <StatChip value={publicGists} hoverText="공개 Gist">
-      <ShieldIcon />
+      <GistIcon />
     </StatChip>
   </div>
   <div class="statChipDivider">
     <StatChip value={twitter ? `@${twitter}` : '없음'} hoverText="트위터 계정">
-      <ShieldIcon />
+      <TwitterIcon />
     </StatChip>
     <StatChip value={location} hoverText="위치">
-      <ShieldIcon />
+      <LocationIcon />
     </StatChip>
   </div>
   <div class="statChipDivider">
     <StatChip value={`${dateFromCreated} 일`} hoverText="계정 지속일">
-      <ShieldIcon />
+      <DateIcon />
     </StatChip>
     <StatChip value="저녁형" hoverText="커밋 시간">
-      <SwordIcon />
+      <TimeIcon />
     </StatChip>
   </div>
 </div>
