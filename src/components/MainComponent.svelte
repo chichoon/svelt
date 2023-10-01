@@ -11,11 +11,14 @@
 
   export let data: GitHubData;
 
-  setContext('leftStatusSectionData', {
+  setContext('NumeralStatsData', {
     followers: data.followers,
     following: data.following,
     publicRepos: data.public_repos,
     publicGists: data.public_gists,
+    location: data.location,
+    twitter: data.twitter_username,
+    createdAt: data.created_at,
   });
 </script>
 

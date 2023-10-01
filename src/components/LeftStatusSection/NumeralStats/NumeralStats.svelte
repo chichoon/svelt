@@ -9,7 +9,9 @@
   import SwordIcon from '@/assets/SwordIcon.svelte';
   import ShieldIcon from '@/assets/ShieldIcon.svelte';
 
-  const { followers, following, publicGists, publicRepos } = getContext('leftStatusSectionData');
+  const { followers, following, publicGists, publicRepos, location, twitter, createdAt } =
+    getContext('NumeralStatsData');
+  $: dateFromCreated = Math.round((new Date().valueOf() - new Date(createdAt).valueOf()) / 1000 / 60 / 60 / 24);
 </script>
 
 <div class="numeralStatsWrapper">
@@ -34,18 +36,18 @@
     </StatChip>
   </div>
   <div class="statChipDivider">
-    <StatChip value={52} maxValue={1000} hoverText="방어력">
+    <StatChip value={twitter ? `@${twitter}` : '없음'} hoverText="트위터 계정">
       <ShieldIcon />
     </StatChip>
-    <StatChip value={2} hoverText="저지 가능 수">
+    <StatChip value={location} hoverText="위치">
       <ShieldIcon />
     </StatChip>
   </div>
   <div class="statChipDivider">
-    <StatChip value={0} hoverText="마법 방어력">
+    <StatChip value={`${dateFromCreated} 일`} hoverText="계정 지속일">
       <ShieldIcon />
     </StatChip>
-    <StatChip value="다소 느림" hoverText="재배치 시간">
+    <StatChip value="저녁형" hoverText="커밋 시간">
       <SwordIcon />
     </StatChip>
   </div>

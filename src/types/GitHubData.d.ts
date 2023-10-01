@@ -12,4 +12,6 @@ export interface GitHubData {
   html_url: string;
   created_at: string;
   avatar_url: string;
+  location: string | null;
+  twitter_username: string | null;
 }
