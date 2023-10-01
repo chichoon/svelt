@@ -1,10 +1,15 @@
 <script>
-  import FastForwardIcon from "@/assets/FastForwardIcon.svelte";
-  import StatChip from "./StatChip.svelte";
-  import PlusIcon from "@/assets/PlusIcon.svelte";
-  import HourglassIcon from "@/assets/HourglassIcon.svelte";
-  import SwordIcon from "@/assets/SwordIcon.svelte";
-  import ShieldIcon from "@/assets/ShieldIcon.svelte";
+  import { getContext } from 'svelte';
+
+  import FastForwardIcon from '@/assets/FastForwardIcon.svelte';
+  import StatChip from './StatChip.svelte';
+
+  import PlusIcon from '@/assets/PlusIcon.svelte';
+  import HourglassIcon from '@/assets/HourglassIcon.svelte';
+  import SwordIcon from '@/assets/SwordIcon.svelte';
+  import ShieldIcon from '@/assets/ShieldIcon.svelte';
+
+  const { followers, following, publicGists, publicRepos } = getContext('leftStatusSectionData');
 </script>
 
 <div class="numeralStatsWrapper">
@@ -13,18 +18,18 @@
     <FastForwardIcon />
   </div>
   <div class="statChipDivider">
-    <StatChip value={822} maxValue={5000} hoverText="체력">
+    <StatChip value={followers} maxValue={500} hoverText="팔로워">
       <PlusIcon />
     </StatChip>
-    <StatChip value="느림" hoverText="체력">
+    <StatChip value={following} maxValue={500} hoverText="팔로잉">
       <HourglassIcon />
     </StatChip>
   </div>
   <div class="statChipDivider">
-    <StatChip value={789} maxValue={2000} hoverText="공격력">
+    <StatChip value={publicRepos} maxValue={1000} hoverText="공개 Repo">
       <SwordIcon />
     </StatChip>
-    <StatChip value={21} hoverText="코스트">
+    <StatChip value={publicGists} hoverText="공개 Gist">
       <ShieldIcon />
     </StatChip>
   </div>
@@ -47,8 +52,8 @@
 </div>
 
 <style lang="scss">
-  @use "@/styles/colors";
-  @import "./numeralStats.scss";
+  @use '@/styles/colors';
+  @import './numeralStats.scss';
 
   .numeralStatsTitle :global(svg) {
     width: 10px;

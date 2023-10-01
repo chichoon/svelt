@@ -1,7 +1,7 @@
 <script>
-  import JobStats from "./JobStats/JobStats.svelte";
-  import NameArea from "./NameArea/NameArea.svelte";
-  import NumeralStats from "./NumeralStats/NumeralStats.svelte";
+  import JobStats from './JobStats/JobStats.svelte';
+  import NameArea from './NameArea/NameArea.svelte';
+  import NumeralStats from './NumeralStats/NumeralStats.svelte';
 </script>
 
 <section class="leftStatSection">
@@ -11,7 +11,7 @@
 </section>
 
 <style lang="scss">
-  @use "@/styles/levels";
+  @use '@/styles/levels';
 
   .leftStatSection {
     max-width: 50vw;

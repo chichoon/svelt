@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { setContext } from 'svelte';
+
   import NavButtonSection from './NavButtonSection/NavButtonSection.svelte';
   import LeftStatusSection from './LeftStatusSection/LeftStatusSection.svelte';
   import RightStatusSection from './RightStatusSection/RightStatusSection.svelte';
@@ -6,16 +8,22 @@
   import type { GitHubData } from '@/types/GitHubData';
 
   import GitHubIcon from '@/assets/GitHubIcon.svelte';
-  import operatorImg from '@/assets/images/operator.png';
 
   export let data: GitHubData;
+
+  setContext('leftStatusSectionData', {
+    followers: data.followers,
+    following: data.following,
+    publicRepos: data.public_repos,
+    publicGists: data.public_gists,
+  });
 </script>
 
 <main class="statPageBackgroundWrapper">
-  <NavButtonSection 
-    htmlUrl={data.html_url} 
-    blogUrl={data.blog || ''} 
-    email={data.email || ''} 
+  <NavButtonSection
+    htmlUrl={data.html_url}
+    blogUrl={data.blog || ''}
+    email={data.email || ''}
     createdAt={data.created_at}
   />
   <div class="groupIconWrapper">
